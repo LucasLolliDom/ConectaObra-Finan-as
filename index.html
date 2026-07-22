@@ -319,6 +319,71 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-u
 .lb-close{position:fixed;top:16px;right:20px;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;opacity:.8}
 .lb-close:hover{opacity:1}
 
+
+/* ===== DOCUMENTOS v3 ===== */
+.doc-attach-btn{background:none;border:1px solid #DCD9E5;border-radius:6px;padding:3px 7px;font-size:13px;cursor:pointer;color:#4811BF;transition:all .15s;white-space:nowrap}
+.doc-attach-btn:hover{background:#EBE8FF;border-color:#4811BF}
+.doc-attach-btn.has-docs{background:#EBE8FF;border-color:#9A90D8;font-weight:700}
+/* Modal overlay */
+#doc-modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:8000;display:none;align-items:center;justify-content:center}
+#doc-modal-overlay.open{display:flex}
+#doc-modal{background:#fff;border-radius:16px;width:min(660px,95vw);max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.25);display:flex;flex-direction:column}
+.dm-header{display:flex;align-items:flex-start;justify-content:space-between;padding:20px 22px 14px;border-bottom:1px solid #EAE8F0}
+.dm-title{font-size:15px;font-weight:700;color:#171126;margin-bottom:2px}
+.dm-sub{font-size:12px;color:#625C70}
+.dm-close{background:none;border:none;font-size:22px;cursor:pointer;color:#9490A0;padding:0 4px;line-height:1}
+.dm-close:hover{color:#171126}
+.dm-body{padding:18px 22px;flex:1}
+/* Drop zone */
+.dm-drop{border:2px dashed #DCD9E5;border-radius:10px;padding:20px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:14px}
+.dm-drop:hover,.dm-drop.over{border-color:#4811BF;background:#EBE8FF}
+.dm-drop-text{font-size:13px;color:#625C70}
+.dm-drop-text strong{color:#4811BF}
+.dm-paste-badge{display:inline-block;margin-top:6px;padding:3px 10px;border-radius:10px;background:#EBE8FF;color:#4811BF;font-size:11px;font-weight:700}
+/* Draft thumbs */
+.dm-draft{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.dm-thumb{position:relative;display:inline-block}
+.dm-thumb img{width:72px;height:72px;object-fit:cover;border-radius:7px;border:1px solid #DCD9E5;display:block}
+.dm-thumb .rm{position:absolute;top:-5px;right:-5px;width:17px;height:17px;border-radius:50%;background:#C62828;color:#fff;border:none;font-size:11px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+/* Saved images */
+.dm-saved-imgs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.dm-saved-imgs img{width:80px;height:80px;object-fit:cover;border-radius:8px;border:1px solid #DCD9E5;cursor:zoom-in;transition:opacity .15s}
+.dm-saved-imgs img:hover{opacity:.8}
+.dm-no-imgs{padding:14px;text-align:center;color:#9490A0;font-size:13px;background:#F2F2F2;border-radius:8px;margin-bottom:14px}
+/* Note + status */
+.dm-note{width:100%;padding:8px 10px;border:1px solid #DCD9E5;border-radius:7px;font-size:13px;resize:vertical;min-height:52px;color:#171126;margin-bottom:12px}
+.dm-paid-row{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#EBE8FF;border:1px solid #C5BCFF;border-radius:8px;margin-bottom:14px}
+.dm-paid-row input{accent-color:#4811BF;width:16px;height:16px;cursor:pointer}
+.dm-paid-row label{font-size:13px;font-weight:600;color:#4811BF;cursor:pointer}
+.dm-footer{display:flex;gap:10px;padding:14px 22px;border-top:1px solid #EAE8F0}
+.dm-save-btn{flex:1;padding:10px;background:#4811BF;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer}
+.dm-save-btn:hover{background:#3A08A6}
+.dm-del-btn{padding:10px 16px;background:#fff;color:#C62828;border:1px solid #F5BABA;border-radius:8px;font-size:13px;cursor:pointer}
+.dm-del-btn:hover{background:#FDE8E8}
+/* Documentos gallery tab */
+.docs-empty{padding:40px;text-align:center;color:#9490A0;font-size:13px}
+.docs-gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.doc-gcard{background:#fff;border:1px solid #DCD9E5;border-radius:12px;overflow:hidden;cursor:pointer;transition:box-shadow .15s}
+.doc-gcard:hover{box-shadow:0 3px 14px rgba(72,17,191,.13)}
+.doc-gcard-imgs{display:flex;gap:3px;height:80px;overflow:hidden;background:#F2F2F2}
+.doc-gcard-imgs img{width:80px;height:80px;object-fit:cover;flex-shrink:0}
+.doc-gcard-more{width:80px;height:80px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#4811BF;background:#EBE8FF;flex-shrink:0}
+.doc-gcard-body{padding:12px}
+.doc-gcard-desc{font-size:14px;font-weight:700;color:#171126;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.doc-gcard-date{font-size:11px;color:#9490A0;margin-bottom:4px}
+.doc-gcard-amount{font-size:13px;font-weight:700;color:#C62828}
+.doc-gcard-paid{display:inline-block;margin-top:6px;padding:2px 9px;border-radius:8px;font-size:11px;font-weight:700;background:#EBE8FF;color:#4811BF}
+.doc-gcard-pending{display:inline-block;margin-top:6px;padding:2px 9px;border-radius:8px;font-size:11px;font-weight:700;background:#FDE8E8;color:#C62828}
+/* Lightbox */
+#dm-lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);z-index:9999;display:none;align-items:center;justify-content:center;flex-direction:column}
+#dm-lightbox.open{display:flex}
+#dm-lightbox img{max-width:88vw;max-height:78vh;border-radius:8px;object-fit:contain}
+.dm-lb-nav{display:flex;gap:14px;margin-top:14px;align-items:center}
+.dm-lb-btn{padding:7px 18px;border-radius:7px;background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);font-size:14px;cursor:pointer}
+.dm-lb-btn:hover{background:rgba(255,255,255,.25)}
+.dm-lb-counter{color:rgba(255,255,255,.65);font-size:12px}
+.dm-lb-close{position:fixed;top:14px;right:18px;background:none;border:none;color:#fff;font-size:26px;cursor:pointer}
+
 </style>
 
 
@@ -429,6 +494,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-u
           <th data-col="amount">Valor <span class="sort-arrow">&#8593;</span></th>
           <th data-col="paymentStatus">Pagamento <span class="sort-arrow">&#8593;</span></th>
           <th data-col="status">Status <span class="sort-arrow">&#8593;</span></th>
+          <th style="width:48px;text-align:center">Docs</th>
         </tr>
       </thead>
       <tbody id="txn-tbody"></tbody>
@@ -637,88 +703,83 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-u
 
 <!-- DOCUMENTOS -->
 <div class="tab-panel" id="documentos">
-  <div class="two-col" style="gap:20px;align-items:flex-start">
-
-    <!-- Upload -->
-    <div>
-      <div class="card">
-        <h3>ADICIONAR DOCUMENTO</h3>
-
-        <div id="doc-drop-zone" class="doc-drop-zone">
-          <span class="dz-icon">&#128247;</span>
-          <div class="dz-title">Clique ou arraste imagens aqui</div>
-          <div class="dz-sub">JPG, PNG, WEBP, PDF &bull; m&aacute;x. 5 MB cada &bull; m&uacute;ltiplas imagens</div>
-          <div class="doc-paste-hint">&#9096; Ctrl+V para colar da &aacute;rea de transfer&ecirc;ncia</div>
-          <input type="file" id="doc-file-inp" accept="image/*,application/pdf" multiple style="display:none">
-        </div>
-
-        <div id="doc-draft-thumbs" class="doc-draft-thumbs"></div>
-
-        <div class="doc-form-grid">
-          <div>
-            <label class="doc-form-label">Data do documento</label>
-            <input type="date" class="doc-form-input" id="doc-date-inp">
-          </div>
-          <div>
-            <label class="doc-form-label">Nota / descri&ccedil;&atilde;o</label>
-            <input type="text" class="doc-form-input" id="doc-note-inp" placeholder="Ex.: Nota fiscal, recibo...">
-          </div>
-        </div>
-
-        <div style="margin-bottom:12px">
-          <label class="doc-form-label">Conectar a um custo</label>
-          <select class="doc-form-select" id="doc-cost-sel">
-            <option value="">-- Selecione um custo --</option>
-          </select>
-        </div>
-
-        <div class="doc-cost-card" id="doc-cost-preview">
-          <div class="dcc-name" id="doc-cost-name"></div>
-          <div class="dcc-total" id="doc-cost-total"></div>
-        </div>
-
-        <div class="doc-paid-row" id="doc-paid-row">
-          <input type="checkbox" id="doc-mark-paid" checked>
-          <label for="doc-mark-paid">Marcar este custo como <strong>Pago</strong> ao salvar</label>
-        </div>
-
-        <button class="doc-add-btn" id="doc-add-btn">&#10003; Salvar Documento</button>
+  <div class="card">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px">
+      <h3 style="margin:0">DOCUMENTOS ANEXADOS</h3>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <select id="docs-filter" style="padding:6px 10px;border:1px solid #DCD9E5;border-radius:7px;font-size:13px;background:#fff">
+          <option value="all">Todos</option>
+          <option value="paid">Pagos</option>
+          <option value="pending">Pendentes</option>
+        </select>
+        <input type="text" id="docs-search" placeholder="Buscar descri&ccedil;&atilde;o..." style="padding:6px 10px;border:1px solid #DCD9E5;border-radius:7px;font-size:13px;min-width:160px">
+        <span style="font-size:12px;color:#9490A0" id="docs-count"></span>
       </div>
     </div>
-
-    <!-- Galeria -->
-    <div>
-      <div class="card">
-        <h3>DOCUMENTOS SALVOS</h3>
-        <div class="doc-filter-bar">
-          <select id="docs-filter">
-            <option value="all">Todos</option>
-            <option value="paid">Pagos</option>
-            <option value="pending">Pendentes</option>
-          </select>
-          <input type="text" id="docs-search" placeholder="Buscar custo ou nota...">
-          <span style="font-size:12px;color:#9490A0;white-space:nowrap" id="docs-count"></span>
-        </div>
-        <div class="docs-grid" id="docs-gallery"></div>
-      </div>
-    </div>
+    <p style="font-size:13px;color:#625C70;margin-bottom:16px">Adicione documentos diretamente pela aba <strong>Transa&ccedil;&otilde;es</strong> &mdash; clique no bot&atilde;o &#128247; em qualquer linha.</p>
+    <div class="docs-gallery-grid" id="docs-gallery"></div>
   </div>
 
-  <!-- Lightbox -->
-  <div id="docs-lightbox">
-    <button class="lb-close" id="lb-close">&#10005;</button>
-    <img id="lb-img" src="" alt="">
-    <div class="lb-nav">
-      <button class="lb-btn" id="lb-prev">&#8592; Anterior</button>
-      <span class="lb-counter" id="lb-counter"></span>
-      <button class="lb-btn" id="lb-next">Pr&oacute;xima &#8594;</button>
-    </div>
-  </div>
+</div>
+
+
 
   <footer class="verse-footer">
     <p class="verse-text">"O homem fiel ter&aacute; muitas b&ecirc;n&ccedil;&atilde;os."</p>
     <p class="verse-ref">&mdash; Prov&eacute;rbios 28:20</p>
   </footer>
+</div>
+
+
+<!-- DOC MODAL -->
+<div id="doc-modal-overlay">
+  <div id="doc-modal">
+    <div class="dm-header">
+      <div>
+        <div class="dm-title" id="dm-title">Documentos</div>
+        <div class="dm-sub" id="dm-sub"></div>
+      </div>
+      <button class="dm-close" id="dm-close">&#215;</button>
+    </div>
+    <div class="dm-body">
+      <!-- Imagens salvas -->
+      <div id="dm-saved-section">
+        <div style="font-size:11px;font-weight:700;color:#625C70;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Imagens salvas</div>
+        <div class="dm-saved-imgs" id="dm-saved-imgs"></div>
+      </div>
+      <!-- Upload -->
+      <div style="font-size:11px;font-weight:700;color:#625C70;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Adicionar imagens</div>
+      <div class="dm-drop" id="dm-drop">
+        <input type="file" id="dm-file-inp" accept="image/*" multiple style="display:none">
+        <div class="dm-drop-text">&#128247; <strong>Clique</strong> ou arraste imagens &bull; <strong>Ctrl+V</strong> para colar</div>
+        <div class="dm-paste-badge">&#9096; Ctrl+V funciona aqui</div>
+      </div>
+      <div class="dm-draft" id="dm-draft-thumbs"></div>
+      <!-- Nota -->
+      <div style="font-size:11px;font-weight:700;color:#625C70;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Nota</div>
+      <textarea class="dm-note" id="dm-note" placeholder="Observa&ccedil;&otilde;es, n&uacute;mero da nota fiscal..."></textarea>
+      <!-- Pago -->
+      <div class="dm-paid-row">
+        <input type="checkbox" id="dm-paid" checked>
+        <label for="dm-paid">Marcar esta transa&ccedil;&atilde;o como <strong>Paga</strong></label>
+      </div>
+    </div>
+    <div class="dm-footer">
+      <button class="dm-del-btn" id="dm-del-btn" style="display:none">Remover tudo</button>
+      <button class="dm-save-btn" id="dm-save-btn">&#10003; Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="dm-lightbox">
+  <button class="dm-lb-close" id="dm-lb-close">&#215;</button>
+  <img id="dm-lb-img" src="" alt="">
+  <div class="dm-lb-nav">
+    <button class="dm-lb-btn" id="dm-lb-prev">&#8592;</button>
+    <span class="dm-lb-counter" id="dm-lb-counter"></span>
+    <button class="dm-lb-btn" id="dm-lb-next">&#8594;</button>
+  </div>
 </div>
 
 <!-- MODAL NOVA DESPESA -->
@@ -1018,7 +1079,8 @@ function renderTxnTable(){
       '<td>'+t.paidBy+'</td>'+
       '<td class="amount-cell">'+fmt(t.amount)+'</td>'+
       '<td>'+payBadge+'</td>'+
-      '<td><select class="status-select" data-row-key="'+k+'" data-val="'+statusVal+'"><option value=""'+(statusVal===''?' selected':'')+'>-</option><option value="could cancel"'+(statusVal==='could cancel'?' selected':'')+'>pode cancelar</option><option value="cancelled"'+(statusVal==='cancelled'?' selected':'')+'>cancelado</option></select></td>';
+      '<td><select class="status-select" data-row-key="'+k+'" data-val="'+statusVal+'"><option value=""'+(statusVal===''?' selected':'')+'>-</option><option value="could cancel"'+(statusVal==='could cancel'?' selected':'')+'>pode cancelar</option><option value="cancelled"'+(statusVal==='cancelled'?' selected':'')+'>cancelado</option></select></td>'+
+      '<td style="text-align:center"><button class="doc-attach-btn" data-rk="'+k+'" data-desc="'+encodeURIComponent(t.displayDescription)+'" data-amount="'+t.amount.toFixed(2)+'" data-date="'+t.date+'" title="Ver/adicionar documentos">'+( (getDocs()[k]&&getDocs()[k].images&&getDocs()[k].images.length)?'&#128247; '+getDocs()[k].images.length:'&#128247;')+'</button></td>';
     tbody.appendChild(tr);
   });
   tbody.querySelectorAll('.status-select').forEach(function(sel){
@@ -2294,89 +2356,132 @@ function docsWire(){
 (function initDocs(){try{docsWire();}catch(e){console.error('initDocs',e);}})();
 
 
-// ===================== DOCUMENTOS v2 =====================
+// ===================== DOCUMENTOS v3 =====================
 var DOCS_LS='lf:docs';
-function getDocs(){try{var s=localStorage.getItem(DOCS_LS);return s?JSON.parse(s):[];}catch(e){return[];}}
+// Store: { [rowKey]: { images:[], note:'', paid:false, txnDesc:'', txnAmount:0, txnDate:'' } }
+function getDocs(){try{var s=localStorage.getItem(DOCS_LS);return s?JSON.parse(s):{};} catch(e){return{};}}
 function saveDocs(d){try{localStorage.setItem(DOCS_LS,JSON.stringify(d));}catch(e){}}
-function genDocId(){return 'doc_'+Date.now()+'_'+Math.random().toString(36).substr(2,5);}
-function isPaidTxn(k){try{var p=JSON.parse(localStorage.getItem('lf:paid-marks')||'{}');return!!p[k];}catch(e){return false;}}
-function markCostPaid(name){
-  if(!window.DATA||!DATA.transactions)return;
-  try{
-    var pm=JSON.parse(localStorage.getItem('lf:paid-marks')||'{}');
-    DATA.transactions.forEach(function(t){if(t.rawDescription===name)pm[rowKey(t)]=true;});
-    localStorage.setItem('lf:paid-marks',JSON.stringify(pm));
-  }catch(e){}
+
+// ── Modal state ──────────────────────────────────────────
+var _dmRK='', _dmDesc='', _dmAmount=0, _dmDate='', _dmDraft=[];
+
+function docsOpenModal(rk, desc, amount, date){
+  _dmRK=rk; _dmDesc=decodeURIComponent(desc||rk); _dmAmount=parseFloat(amount||0); _dmDate=date||'';
+  _dmDraft=[];
+  var docs=getDocs();
+  var entry=docs[rk]||{images:[],note:'',paid:false};
+
+  // Header
+  var title=document.getElementById('dm-title');
+  var sub=document.getElementById('dm-sub');
+  if(title)title.textContent=_dmDesc;
+  if(sub)sub.textContent=(_dmDate||'')+(_dmAmount?' · R$ '+_dmAmount.toFixed(2):'');
+
+  // Saved images
+  var savedEl=document.getElementById('dm-saved-imgs');
+  var savedSection=document.getElementById('dm-saved-section');
+  if(savedEl){
+    if(entry.images&&entry.images.length){
+      savedSection.style.display='block';
+      savedEl.innerHTML=entry.images.map(function(src,i){
+        return '<img src="'+src+'" onclick="dmLbOpen(\''+rk+'\','+i+')" title="Clique para ampliar">';
+      }).join('');
+    } else {
+      savedSection.style.display='none';
+      savedEl.innerHTML='';
+    }
+  }
+  // Note
+  var noteEl=document.getElementById('dm-note');
+  if(noteEl)noteEl.value=entry.note||'';
+  // Paid
+  var paidEl=document.getElementById('dm-paid');
+  if(paidEl)paidEl.checked=entry.paid||false;
+  // Del btn
+  var delBtn=document.getElementById('dm-del-btn');
+  if(delBtn)delBtn.style.display=(entry.images&&entry.images.length)?'':'none';
+  // Draft reset
+  _dmDraft=[];
+  dmRenderDraft();
+  // Open
+  var overlay=document.getElementById('doc-modal-overlay');
+  if(overlay)overlay.classList.add('open');
 }
 
-// ── Draft images ──────────────────────────────────────────
-var _draftImgs=[];
-function docsAddFiles(files){
+function dmRenderDraft(){
+  var c=document.getElementById('dm-draft-thumbs');if(!c)return;
+  if(!_dmDraft.length){c.innerHTML='';return;}
+  c.innerHTML=_dmDraft.map(function(src,i){
+    return '<div class="dm-thumb"><img src="'+src+'"><button class="rm" onclick="dmDraftRm('+i+')">&#215;</button></div>';
+  }).join('');
+}
+function dmDraftRm(i){_dmDraft.splice(i,1);dmRenderDraft();}
+function dmAddFiles(files){
   Array.from(files).forEach(function(f){
-    if(f.size>5*1024*1024){showToast('Arquivo '+f.name+' muito grande (máx 5MB).');return;}
+    if(f.size>5*1024*1024){showToast('Arquivo muito grande (máx 5MB)');return;}
     var r=new FileReader();
-    r.onload=function(e){_draftImgs.push(e.target.result);docsRenderDraft();};
+    r.onload=function(e){_dmDraft.push(e.target.result);dmRenderDraft();};
     r.readAsDataURL(f);
   });
 }
-function docsRenderDraft(){
-  var c=document.getElementById('doc-draft-thumbs');if(!c)return;
-  if(!_draftImgs.length){c.innerHTML='';return;}
-  c.innerHTML=_draftImgs.map(function(src,i){
-    return '<div class="doc-draft-thumb">'
-      +'<img src="'+src+'">'
-      +'<button class="ddt-rm" onclick="docsDraftRm('+i+')">&#215;</button>'
-      +'</div>';
-  }).join('');
-}
-function docsDraftRm(i){_draftImgs.splice(i,1);docsRenderDraft();}
 
-// ── Cost selector ─────────────────────────────────────────
-function docsPopulateCosts(){
-  var sel=document.getElementById('doc-cost-sel');if(!sel)return;
-  sel.innerHTML='<option value="">-- Selecione um custo --</option>';
-  if(!window.DATA||!DATA.transactions)return;
-  var costs={};
-  DATA.transactions.forEach(function(t){
-    var k=t.rawDescription;
-    if(!costs[k])costs[k]={total:0,count:0};
-    costs[k].total+=t.amount;costs[k].count++;
-  });
-  Object.keys(costs).sort().forEach(function(name){
-    var opt=document.createElement('option');
-    opt.value=name;
-    opt.textContent=name;
-    opt.dataset.total=costs[name].total.toFixed(2);
-    opt.dataset.count=costs[name].count;
-    // Check if already paid
-    var allPaid=true;
-    DATA.transactions.forEach(function(t){if(t.rawDescription===name&&!isPaidTxn(rowKey(t)))allPaid=false;});
-    opt.dataset.paid=allPaid?'1':'0';
-    sel.appendChild(opt);
-  });
+function dmSave(){
+  var docs=getDocs();
+  var entry=docs[_dmRK]||{images:[]};
+  entry.images=(entry.images||[]).concat(_dmDraft);
+  entry.note=(document.getElementById('dm-note')||{value:''}).value;
+  entry.paid=!!(document.getElementById('dm-paid')||{checked:false}).checked;
+  entry.txnDesc=_dmDesc; entry.txnAmount=_dmAmount; entry.txnDate=_dmDate;
+  docs[_dmRK]=entry;
+  saveDocs(docs);
+  // Sync paid marks
+  if(entry.paid){
+    try{
+      var pm=JSON.parse(localStorage.getItem('lf:paid-marks')||'{}');
+      pm[_dmRK]=true;
+      localStorage.setItem('lf:paid-marks',JSON.stringify(pm));
+    }catch(e){}
+  }
+  dmClose();
+  // Refresh transaction table
+  if(typeof renderTxnTable==='function')renderTxnTable();
+  showToast('Documento salvo!');
+}
+
+function dmDeleteAll(){
+  if(!confirm('Remover todos os documentos desta transação?'))return;
+  var docs=getDocs();delete docs[_dmRK];saveDocs(docs);
+  dmClose();
+  if(typeof renderTxnTable==='function')renderTxnTable();
+  showToast('Documentos removidos.');
+}
+
+function dmClose(){
+  var overlay=document.getElementById('doc-modal-overlay');
+  if(overlay)overlay.classList.remove('open');
 }
 
 // ── Lightbox ──────────────────────────────────────────────
-var _lbImgs=[],_lbIdx=0;
-function docsLightbox(id,idx){
-  var doc=getDocs().find(function(d){return d.id===id;});
-  if(!doc)return;
-  _lbImgs=doc.images||[];_lbIdx=idx||0;
-  docsLbShow();
+var _lbRK='',_lbIdx=0;
+function dmLbOpen(rk,idx){
+  _lbRK=rk; _lbIdx=idx||0;
+  dmLbShow();
 }
-function docsLbShow(){
-  var lb=document.getElementById('docs-lightbox');
-  var img=document.getElementById('lb-img');
-  var ctr=document.getElementById('lb-counter');
-  if(!lb||!img||!_lbImgs.length)return;
-  img.src=_lbImgs[_lbIdx];
-  if(ctr)ctr.textContent=(_lbIdx+1)+' / '+_lbImgs.length;
-  document.getElementById('lb-prev').style.display=_lbImgs.length>1?'':'none';
-  document.getElementById('lb-next').style.display=_lbImgs.length>1?'':'none';
-  lb.style.display='flex';
+function dmLbShow(){
+  var docs=getDocs();
+  var imgs=(docs[_lbRK]&&docs[_lbRK].images)||[];
+  var lb=document.getElementById('dm-lightbox');
+  var img=document.getElementById('dm-lb-img');
+  var ctr=document.getElementById('dm-lb-counter');
+  if(!lb||!imgs.length)return;
+  img.src=imgs[_lbIdx];
+  if(ctr)ctr.textContent=(_lbIdx+1)+' / '+imgs.length;
+  document.getElementById('dm-lb-prev').style.display=imgs.length>1?'':'none';
+  document.getElementById('dm-lb-next').style.display=imgs.length>1?'':'none';
+  lb.classList.add('open');
 }
 
-// ── Gallery ───────────────────────────────────────────────
+// ── Galeria (aba Documentos) ──────────────────────────────
 function docsRenderGallery(){
   var el=document.getElementById('docs-gallery');
   var cnt=document.getElementById('docs-count');
@@ -2384,147 +2489,123 @@ function docsRenderGallery(){
   var docs=getDocs();
   var flt=(document.getElementById('docs-filter')||{value:'all'}).value;
   var srch=((document.getElementById('docs-search')||{value:''}).value||'').toLowerCase();
-  var filtered=docs.filter(function(d){
-    if(flt==='paid'&&!d.paid)return false;
-    if(flt==='pending'&&d.paid)return false;
-    if(srch&&!(d.costKey||'').toLowerCase().includes(srch)&&!(d.note||'').toLowerCase().includes(srch))return false;
+  var entries=Object.keys(docs).map(function(rk){return Object.assign({rk:rk},docs[rk]);});
+  entries=entries.filter(function(e){
+    if(!e.images||!e.images.length)return false;
+    if(flt==='paid'&&!e.paid)return false;
+    if(flt==='pending'&&e.paid)return false;
+    if(srch&&!(e.txnDesc||'').toLowerCase().includes(srch))return false;
     return true;
   });
-  filtered.sort(function(a,b){return(b.date||'').localeCompare(a.date||'');});
-  if(cnt)cnt.textContent=filtered.length+' doc'+(filtered.length!==1?'s':'');
-  if(!filtered.length){
-    el.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:32px;color:#9490A0;font-size:13px">Nenhum documento encontrado.</div>';
+  entries.sort(function(a,b){return(b.txnDate||'').localeCompare(a.txnDate||'');});
+  if(cnt)cnt.textContent=entries.length+' documento'+(entries.length!==1?'s':'');
+  if(!entries.length){
+    el.innerHTML='<div class="docs-empty">Nenhum documento encontrado.<br>Adicione pela aba Transações clicando em &#128247;.</div>';
     return;
   }
-  el.innerHTML=filtered.map(function(d){
-    var imgs=d.images||[];
-    var strip=imgs.slice(0,4).map(function(src,i){
-      return '<img src="'+src+'" onclick="docsLightbox(\''+d.id+'\','+i+')">';
-    }).join('');
-    if(imgs.length>4)strip+='<div class="doc-imgs-more" onclick="docsLightbox(\''+d.id+'\',4)">+'+( imgs.length-4)+'</div>';
-    return '<div class="doc-card">'
-      +'<div class="doc-card-body">'
-      +'<div style="display:flex;justify-content:space-between;align-items:flex-start">'
-      +'<div>'
-      +(d.costKey?'<div class="doc-card-cost">'+d.costKey+'</div>':'')
-      +'<div class="doc-card-date">'+d.date+'</div>'
-      +(d.costTotal?'<div class="doc-card-amount">R$ '+parseFloat(d.costTotal).toFixed(2)+'</div>':'')
-      +'</div>'
-      +(d.paid?'<span class="doc-badge-paid">&#10003; Pago</span>':'<span class="doc-badge-pending">&#9203; Pendente</span>')
-      +'</div>'
-      +(d.note?'<div class="doc-card-note">&ldquo;'+d.note+'&rdquo;</div>':'')
-      +(imgs.length?'<div class="doc-imgs-strip">'+strip+'</div>':'')
-      +'<div class="doc-card-footer">'
-      +(imgs.length>1?'<span style="font-size:11px;color:#625C70">'+imgs.length+' imagens</span>':'')
-      +(!d.paid&&d.costKey?'<button class="doc-pay-btn" onclick="docsMarkPaid(\''+d.id+'\')">Marcar Pago</button>':'')
-      +'<button class="doc-rm-btn" onclick="docsRemove(\''+d.id+'\')">Remover</button>'
-      +'</div>'
+  el.innerHTML=entries.map(function(e){
+    var imgs=e.images||[];
+    var strip=imgs.slice(0,3).map(function(src){return '<img src="'+src+'">';}).join('');
+    if(imgs.length>3)strip+='<div class="doc-gcard-more">+' +(imgs.length-3)+'</div>';
+    return '<div class="doc-gcard" onclick="docsOpenModal(\''+e.rk+'\',\''+encodeURIComponent(e.txnDesc||e.rk)+'\',\''+e.txnAmount+'\',\''+e.txnDate+'\')">'
+      +'<div class="doc-gcard-imgs">'+strip+'</div>'
+      +'<div class="doc-gcard-body">'
+      +'<div class="doc-gcard-desc">'+(e.txnDesc||e.rk)+'</div>'
+      +'<div class="doc-gcard-date">'+(e.txnDate||'')+'</div>'
+      +(e.txnAmount?'<div class="doc-gcard-amount">R$ '+parseFloat(e.txnAmount).toFixed(2)+'</div>':'')
+      +(e.note?'<div style="font-size:11px;color:#625C70;font-style:italic;margin-top:4px">'+e.note+'</div>':'')
+      +(e.paid?'<span class="doc-gcard-paid">&#10003; Pago</span>':'<span class="doc-gcard-pending">&#9203; Pendente</span>')
+      +'<div style="font-size:11px;color:#9490A0;margin-top:4px">'+imgs.length+' imagem'+(imgs.length>1?'ns':'')+'</div>'
       +'</div></div>';
   }).join('');
 }
 
-function docsMarkPaid(id){
-  var docs=getDocs(),doc=docs.find(function(d){return d.id===id;});if(!doc)return;
-  doc.paid=true;if(doc.costKey)markCostPaid(doc.costKey);
-  saveDocs(docs);docsRenderGallery();showToast('Marcado como Pago!');
-}
-function docsRemove(id){saveDocs(getDocs().filter(function(d){return d.id!==id;}));docsRenderGallery();showToast('Documento removido.');}
-
-// ── Wire ──────────────────────────────────────────────────
+// ── Wire all events ───────────────────────────────────────
 function docsWire(){
-  var zone=document.getElementById('doc-drop-zone');
-  var finp=document.getElementById('doc-file-inp');
-  // Click
-  if(zone&&finp){
-    zone.addEventListener('click',function(e){if(e.target!==finp)finp.click();});
-    zone.addEventListener('dragover',function(e){e.preventDefault();zone.classList.add('dz-over');});
-    zone.addEventListener('dragleave',function(){zone.classList.remove('dz-over');});
-    zone.addEventListener('drop',function(e){e.preventDefault();zone.classList.remove('dz-over');docsAddFiles(e.dataTransfer.files);});
-    finp.addEventListener('change',function(){if(finp.files.length)docsAddFiles(finp.files);finp.value='';});
+  // Modal close
+  var overlay=document.getElementById('doc-modal-overlay');
+  var dmClose2=document.getElementById('dm-close');
+  if(dmClose2)dmClose2.addEventListener('click',dmClose);
+  if(overlay)overlay.addEventListener('click',function(e){if(e.target===overlay)dmClose();});
+
+  // Drop zone
+  var drop=document.getElementById('dm-drop');
+  var finp=document.getElementById('dm-file-inp');
+  if(drop&&finp){
+    drop.addEventListener('click',function(e){if(e.target!==finp)finp.click();});
+    drop.addEventListener('dragover',function(e){e.preventDefault();drop.classList.add('over');});
+    drop.addEventListener('dragleave',function(){drop.classList.remove('over');});
+    drop.addEventListener('drop',function(e){e.preventDefault();drop.classList.remove('over');dmAddFiles(e.dataTransfer.files);});
+    finp.addEventListener('change',function(){if(finp.files.length)dmAddFiles(finp.files);finp.value='';});
   }
-  // Ctrl+V / paste global (só quando na aba documentos)
+
+  // Paste global
   document.addEventListener('paste',function(e){
-    var docTab=document.getElementById('documentos');
-    if(!docTab||!docTab.classList.contains('active'))return;
-    var items=(e.clipboardData||e.originalEvent&&e.originalEvent.clipboardData||{items:[]}).items;
+    var overlay=document.getElementById('doc-modal-overlay');
+    if(!overlay||!overlay.classList.contains('open'))return;
+    var items=(e.clipboardData||{items:[]}).items;
     var found=false;
     Array.from(items).forEach(function(item){
       if(item.type&&item.type.startsWith('image/')){
-        found=true;var blob=item.getAsFile();
+        found=true;
         var r=new FileReader();
-        r.onload=function(ev){_draftImgs.push(ev.target.result);docsRenderDraft();};
-        r.readAsDataURL(blob);
+        r.onload=function(ev){_dmDraft.push(ev.target.result);dmRenderDraft();};
+        r.readAsDataURL(item.getAsFile());
       }
     });
     if(found){e.preventDefault();showToast('Imagem colada!');}
   });
-  // Data de hoje
-  var di=document.getElementById('doc-date-inp');
-  if(di){var t=new Date();di.value=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');}
-  // Cost selector
-  var csel=document.getElementById('doc-cost-sel');
-  var ccard=document.getElementById('doc-cost-preview');
-  var cname=document.getElementById('doc-cost-name');
-  var ctot=document.getElementById('doc-cost-total');
-  var prow=document.getElementById('doc-paid-row');
-  if(csel){
-    csel.addEventListener('change',function(){
-      var opt=csel.options[csel.selectedIndex];
-      if(!csel.value){if(ccard)ccard.style.display='none';if(prow)prow.style.display='none';return;}
-      if(cname)cname.textContent=csel.value;
-      if(ctot)ctot.textContent='Total registrado: R$ '+(opt.dataset.total||'0.00')+' ('+opt.dataset.count+' lançamento'+((opt.dataset.count||1)>1?'s':'')+')'
-      if(ccard)ccard.style.display='block';
-      if(prow)prow.style.display=opt.dataset.paid==='1'?'none':'flex';
-    });
-  }
-  // Salvar
-  var addBtn=document.getElementById('doc-add-btn');
-  if(addBtn){
-    addBtn.addEventListener('click',function(){
-      var date=(document.getElementById('doc-date-inp')||{value:''}).value;
-      if(!date){showToast('Informe a data.');return;}
-      if(!_draftImgs.length&&!csel.value){showToast('Adicione ao menos uma imagem ou selecione um custo.');return;}
-      var costKey=csel?csel.value:'';
-      var opt=csel?csel.options[csel.selectedIndex]:null;
-      var costTotal=opt?parseFloat(opt.dataset.total||0):0;
-      var markPaid=!!(document.getElementById('doc-mark-paid')||{checked:false}).checked&&!!costKey;
-      var doc={id:genDocId(),date:date,
-        note:(document.getElementById('doc-note-inp')||{value:''}).value,
-        images:_draftImgs.slice(),costKey:costKey,costTotal:costTotal,paid:markPaid};
-      if(markPaid&&costKey)markCostPaid(costKey);
-      var docs=getDocs();docs.unshift(doc);saveDocs(docs);
-      // reset
-      _draftImgs=[];docsRenderDraft();
-      if(document.getElementById('doc-note-inp'))document.getElementById('doc-note-inp').value='';
-      if(csel)csel.value='';if(ccard)ccard.style.display='none';if(prow)prow.style.display='none';
-      var t=new Date();if(di)di.value=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
-      docsRenderGallery();
-      showToast('Documento salvo'+(markPaid?' e marcado como Pago!':'!'));
-    });
-  }
-  // Filter / search
-  var flt=document.getElementById('docs-filter');if(flt)flt.addEventListener('change',docsRenderGallery);
-  var src=document.getElementById('docs-search');if(src)src.addEventListener('input',docsRenderGallery);
-  // Lightbox nav
-  var lb=document.getElementById('docs-lightbox');
-  var lbClose=document.getElementById('lb-close');
-  if(lbClose)lbClose.addEventListener('click',function(){lb.style.display='none';});
-  if(lb)lb.addEventListener('click',function(e){if(e.target===lb)lb.style.display='none';});
-  var lbPrev=document.getElementById('lb-prev');
-  var lbNext=document.getElementById('lb-next');
-  if(lbPrev)lbPrev.addEventListener('click',function(){_lbIdx=(_lbIdx-1+_lbImgs.length)%_lbImgs.length;docsLbShow();});
-  if(lbNext)lbNext.addEventListener('click',function(){_lbIdx=(_lbIdx+1)%_lbImgs.length;docsLbShow();});
-  // Keyboard nav
-  document.addEventListener('keydown',function(e){
-    var lb2=document.getElementById('docs-lightbox');
-    if(!lb2||lb2.style.display==='none')return;
-    if(e.key==='Escape')lb2.style.display='none';
-    if(e.key==='ArrowLeft'&&_lbImgs.length>1){_lbIdx=(_lbIdx-1+_lbImgs.length)%_lbImgs.length;docsLbShow();}
-    if(e.key==='ArrowRight'&&_lbImgs.length>1){_lbIdx=(_lbIdx+1)%_lbImgs.length;docsLbShow();}
+
+  // Save + delete buttons
+  var saveBtn=document.getElementById('dm-save-btn');
+  if(saveBtn)saveBtn.addEventListener('click',dmSave);
+  var delBtn=document.getElementById('dm-del-btn');
+  if(delBtn)delBtn.addEventListener('click',dmDeleteAll);
+
+  // Lightbox
+  var lb=document.getElementById('dm-lightbox');
+  var lbClose=document.getElementById('dm-lb-close');
+  if(lbClose)lbClose.addEventListener('click',function(){lb.classList.remove('open');});
+  if(lb)lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('open');});
+  var lbPrev=document.getElementById('dm-lb-prev');
+  var lbNext=document.getElementById('dm-lb-next');
+  if(lbPrev)lbPrev.addEventListener('click',function(){
+    var imgs=(getDocs()[_lbRK]&&getDocs()[_lbRK].images)||[];
+    _lbIdx=(_lbIdx-1+imgs.length)%imgs.length;dmLbShow();
   });
-  // Ativa tab
+  if(lbNext)lbNext.addEventListener('click',function(){
+    var imgs=(getDocs()[_lbRK]&&getDocs()[_lbRK].images)||[];
+    _lbIdx=(_lbIdx+1)%imgs.length;dmLbShow();
+  });
+
+  // Keyboard
+  document.addEventListener('keydown',function(e){
+    var lb2=document.getElementById('dm-lightbox');
+    if(lb2&&lb2.classList.contains('open')){
+      if(e.key==='Escape'){lb2.classList.remove('open');return;}
+      var imgs=(getDocs()[_lbRK]&&getDocs()[_lbRK].images)||[];
+      if(e.key==='ArrowLeft'&&imgs.length>1){_lbIdx=(_lbIdx-1+imgs.length)%imgs.length;dmLbShow();}
+      if(e.key==='ArrowRight'&&imgs.length>1){_lbIdx=(_lbIdx+1)%imgs.length;dmLbShow();}
+    }
+  });
+
+  // Transaction table delegation for 📎 buttons
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.doc-attach-btn');
+    if(!btn)return;
+    var rk=btn.dataset.rk;
+    var desc=btn.dataset.desc;
+    var amount=btn.dataset.amount;
+    var date=btn.dataset.date;
+    docsOpenModal(rk,desc,amount,date);
+  });
+
+  // Tab activation → render gallery
   var tabBtn=document.querySelector('.tab-btn[data-tab="documentos"]');
-  if(tabBtn){tabBtn.addEventListener('click',function(){setTimeout(function(){docsPopulateCosts();docsRenderGallery();},60);});}
+  if(tabBtn)tabBtn.addEventListener('click',function(){setTimeout(function(){docsRenderGallery();},60);});
+  // Filter/search
+  document.addEventListener('change',function(e){if(e.target&&e.target.id==='docs-filter')docsRenderGallery();});
+  document.addEventListener('input',function(e){if(e.target&&e.target.id==='docs-search')docsRenderGallery();});
 }
 (function initDocs(){try{docsWire();}catch(e){console.error('initDocs',e);}})();
 
